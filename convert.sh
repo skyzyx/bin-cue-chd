@@ -1,9 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-echo "Will proccess files on directory: $1"
+echo "Will process files on directory: $1"
+echo ""
+
+# shellcheck disable=SC2034,SC2162
+read -p "Press enter to continue. Press Ctrl+C to quit." x
 cd "$1" || exit
 
-for file in "$1"/*.cue; do
+find "$1" -type f -name "*.cue" -print0 | while IFS= read -r -d '' file; do
+    echo "Processing file: $file"
     chdman createcd -i "$file" -o "${file%.*}.chd"
 done
 
