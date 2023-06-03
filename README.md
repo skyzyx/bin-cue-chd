@@ -7,12 +7,12 @@ Here's a video for how to do it on Windows. <https://www.youtube.com/watch?v=nAE
 ## Prerequisites
 
 1. Install [Homebrew].
-1. After that, `brew install rom-tools`
+1. After that, `brew install findutils rom-tools`
 
 ## Usage
 
 ```bash
-./convert.sh /path/to/game
+./convert.sh /path/to/game/folder
 ```
 
   [Homebrew]: https://brew.sh
